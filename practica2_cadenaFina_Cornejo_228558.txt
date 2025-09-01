@@ -1,18 +1,30 @@
-/**
- * Práctica: Cadena Fina
- * Nombre: Adán Cornejo
- * ID: 00000228558
- */
 
-fun esFina(): Boolean {
-    // Escribe tu código aquí
+/**
+* Práctica: Cadena Fina
+* Nombre: Adán Cornejo
+* ID: 00000228558
+*/
+
+fun String.esFina(): Boolean {
+    
+	val PROHIBIDAS = listOf("bu", "ba", "be")
+	val VOCALES = setOf('a', 'e', 'i', 'o', 'u')
+	val s = this.lowercase()
+
+
+	val sinSubcadenas = PROHIBIDAS.none { it in s }
+	val suficientesVocales = s.count { it in VOCALES } >= 3
+	val tieneDoble = s.zipWithNext().any { (a, b) -> a == b }
+
+
+return listOf(sinSubcadenas, suficientesVocales, tieneDoble).count { it } >= 2
 }
 
-fun main(args: Array<String>) {
-    
-    println("bac".esFina()) // resultado esperado: False
-    println("aza".esFina()) // resultado esperado: False
-    println("abaca".esFina()) // resultado esperado: False
-    println("baaa".esFina()) // resultado esperado: True
-    println("aaab".esFina()) // resultado esperado: True
+
+fun main() {
+println("bac".esFina()) // esperado: false
+println("aza".esFina()) // esperado: false
+println("abaca".esFina()) // esperado: false
+println("baaa".esFina()) // esperado: true
+println("aaab".esFina()) // esperado: true
 }

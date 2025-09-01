@@ -1,0 +1,18 @@
+/**
+ * Práctica: Cadena Fina
+ * Nombre: Adán Cornejo
+ * ID: 00000228558
+ */
+
+fun esFina(): Boolean {
+    // Escribe tu código aquí
+}
+
+fun main(args: Array<String>) {
+    
+    println("bac".esFina()) // resultado esperado: False
+    println("aza".esFina()) // resultado esperado: False
+    println("abaca".esFina()) // resultado esperado: False
+    println("baaa".esFina()) // resultado esperado: True
+    println("aaab".esFina()) // resultado esperado: True
+}
